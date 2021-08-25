@@ -14,18 +14,26 @@ exports.arraysAnswers = {
   },
 
   remove: function(arr, item) {
-    let result = arr.filter(element => {
+    arr = arr.filter(element => {
       return (element !== item)
     });
-    return result;
+    return arr;
   },
 
   removeWithoutCopy: function(arr, item) {
-
+    for (let i = 0; i < arr.length; i++) {
+      const element = arr[i];
+      if (element == item) {
+        arr.splice(i, 1);
+        i--;
+      }
+    }
+    return arr;
   },
 
   append: function(arr, item) {
-
+    arr.push(item)
+    return arr;
   },
 
   truncate: function(arr) {
