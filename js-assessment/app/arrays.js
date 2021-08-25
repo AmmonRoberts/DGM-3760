@@ -7,9 +7,10 @@ exports.arraysAnswers = {
 
   sum: function(arr) {
     let result = 0;
-    return arr.array.forEach(element => {
+    arr.forEach(element => {
       result += element;
     });
+    return result;
   },
 
   remove: function(arr, item) {
