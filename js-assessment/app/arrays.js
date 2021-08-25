@@ -14,7 +14,10 @@ exports.arraysAnswers = {
   },
 
   remove: function(arr, item) {
-
+    let result = arr.filter(element => {
+      return (element !== item)
+    });
+    return result;
   },
 
   removeWithoutCopy: function(arr, item) {
