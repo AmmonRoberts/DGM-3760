@@ -70,13 +70,28 @@ exports.arraysAnswers = {
 
   duplicates: function (arr) {
 
+    let newArray = arr.some((element, index) => {
+      return arr.indexOf(element) !== index
+    });
+    return newArray;
   },
 
   square: function (arr) {
-
+    return arr.map(element =>
+      element ** 2
+    )
   },
 
   findAllOccurrences: function (arr, target) {
-
+    let newArr = [];
+    let i = 0;
+    arr.forEach(
+      element => {
+        if (element == target)
+          newArr.push(i);
+        i++;
+      }
+    );
+    return newArr;
   }
 };
